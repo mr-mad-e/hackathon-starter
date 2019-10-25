@@ -124,7 +124,7 @@ module.exports = [
         options: {
             clientID: process.env.MICROSOFT_ID,
             clientSecret: process.env.MICROSOFT_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/microsoft/callback`,
+            callbackURL: '/auth/microsoft/callback',
             scope: ['user.read'],
         },
         mapUser: (user, profile) => {
@@ -139,7 +139,7 @@ module.exports = [
         options: {
             consumerKey: process.env.BITBUCKET_ID,
             consumerSecret: process.env.BITBUCKET_SECRET,
-            callbackURL: `/auth/bitbucket/callback`,
+            callbackURL: '/auth/bitbucket/callback',
         },
         mapUser: (user, profile) => {
             console.log(profile);
