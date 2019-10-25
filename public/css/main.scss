@@ -30,7 +30,8 @@ footer {
   height: 45px;
   line-height: 45px;
 
-  p, ul {
+  p,
+  ul {
     margin-bottom: 0;
   }
 }
@@ -51,14 +52,14 @@ textarea {
   margin: -15px 15px -15px;
 }
 
-.navbar{
+.navbar {
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 20px;
   display: block;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 18px;
   float: left;
 }
@@ -153,7 +154,8 @@ textarea {
   background-color: #fffc00;
   color: #000 !important;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: #f1ef00;
   }
 }
@@ -162,8 +164,42 @@ textarea {
   background-color: #007a5a;
   color: #fff;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: #037053;
+    color: #fff;
+  }
+}
+
+.btn-spotify {
+  background-color: #1ed760;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #1ed760;
+    color: #fff;
+  }
+}
+
+.btn-gitlab {
+  background-color: #de7e00;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #de7e00;
+    color: #fff;
+  }
+}
+
+.btn-youtube {
+  background-color: #e52d27;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #e52d27;
     color: #fff;
   }
 }
