@@ -33,7 +33,7 @@ module.exports = [
             user.profile.name = user.profile.name || `${profile.name.givenName} ${profile.name.familyName}`;
             user.profile.gender = user.profile.gender || profile._json.gender;
             user.profile.picture = user.profile.picture || `https://graph.facebook.com/${profile.id}/picture?type=large`;
-            user.profile.location = user.profile.location || (profile._json.location) ? profile._json.location.name : '';
+            // user.profile.location = user.profile.location || (profile._json.location) ? profile._json.location.name : '';
         }
     },
     {
@@ -124,7 +124,7 @@ module.exports = [
         options: {
             clientID: process.env.MICROSOFT_ID,
             clientSecret: process.env.MICROSOFT_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/microsoft/callback`,
+            callbackURL: '/auth/microsoft/callback',
             scope: ['user.read'],
         },
         mapUser: (user, profile) => {
@@ -136,15 +136,109 @@ module.exports = [
         name: 'bitbucket',
         package: 'passport-bitbucket',
         label: 'Bitbucket',
+        scope: ['account', 'email'],
         options: {
             consumerKey: process.env.BITBUCKET_ID,
             consumerSecret: process.env.BITBUCKET_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/bitbucket/callback`,
+            callbackURL: '/auth/bitbucket/callback',
         },
         mapUser: (user, profile) => {
             console.log(profile);
 
-            user.email = user.email || user._json.userPrincipalName;
+            user.email = user.email || profile._json.email;
+            user.profile.name = user.profile.name || profile.displayName;
+        }
+    },
+    {
+        name: 'pinterest',
+        package: 'passport-pinterest',
+        label: 'Pinterest',
+        options: {
+            clientID: process.env.PINTEREST_ID,
+            clientSecret: process.env.PINTEREST_SECRET,
+            callbackURL: '/auth/pinterest/callback',
+            scope: ['read_public'],
+            state: true
+        },
+        mapUser: (user, profile) => {
+            console.log(profile);
+
+            user.email = user.email || profile._json.email;
+            user.profile.name = user.profile.name || profile.displayName;
+        }
+    }, {
+        name: 'spotify',
+        package: 'passport-spotify',
+        label: 'Spotify',
+        options: {
+            clientID: process.env.SPOTIFY_ID,
+            clientSecret: process.env.SPOTIFY_SECRET,
+            callbackURL: '/auth/spotify/callback',
+            scope: ['user-read-email', 'user-read-private']
+        },
+        mapUser: (user, profile) => {
+            user.email = user.email || profile._json.email || `${profile.username}@spotify.com`;
+            user.profile.name = user.profile.name || profile.displayName;
+            user.profile.picture = user.profile.picture || profile.photos[0];
+            user.profile.website = user.profile.website || profile.profileUrl;
+        }
+    }, {
+        name: 'amazon',
+        package: 'passport-amazon',
+        label: 'Amazon',
+        options: {
+            clientID: process.env.AMAZON_ID,
+            clientSecret: process.env.AMAZON_SECRET,
+            callbackURL: '/auth/amazon/callback',
+            scope: ['profile', 'postal_code']
+        },
+        mapUser: (user, profile) => {
+            user.email = user.email || profile._json.email;
+            user.profile.name = user.profile.name || profile.displayName;
+        }
+    }, {
+        name: 'dropbox',
+        package: 'passport-dropbox-oauth2',
+        label: 'Dropbox',
+        options: {
+            apiVersion: '2',
+            clientID: process.env.DROPBOX_ID,
+            clientSecret: process.env.DROPBOX_SECRET,
+            callbackURL: '/auth/dropbox/callback',
+        },
+        mapUser: (user, profile) => {
+            user.email = user.email || profile._json.email;
+            user.profile.name = user.profile.name || profile.displayName;
+            user.profile.picture = user.profile.picture || profile._json.profile_photo_url;
+        }
+    }, {
+        name: 'gitlab',
+        package: 'passport-gitlab2',
+        label: 'Gitlab',
+        options: {
+            clientID:  process.env.GITLAB_ID,
+            clientSecret:  process.env.GITLAB_SECRET,
+            callbackURL: '/auth/gitlab/callback',
+            scope: ['read_user']
+        },
+        mapUser: (user, profile) => {
+            user.email = user.email || profile._json.email;
+            user.profile.name = user.profile.name || profile.displayName;
+            user.profile.picture = user.profile.picture || profile.avatarUrl;
+            user.profile.website = user.profile.website || profile.profileUrl;
+        }
+    }, {
+        name: 'asana',
+        package: 'passport-asana',
+        label: 'Asana',
+        options: {
+            clientID:  process.env.ASANA_ID,
+            clientSecret:  process.env.ASANA_SECRET,
+            callbackURL: '/auth/asana/callback',
+            scope: ['default', 'email', 'profile']
+        },
+        mapUser: (user, profile) => {
+            user.email = user.email || profile._json.email;
             user.profile.name = user.profile.name || profile.displayName;
         }
     },
