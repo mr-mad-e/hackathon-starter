@@ -62,7 +62,11 @@ for (let index = 0; index < strategies.length; index++) {
   const strategy = strategies[index];
   const { Strategy: Strategy } = require(strategy.package);
 
-  passport.use(strategy.name, new Strategy({ ...strategy.options, passReqToCallback: true }, (req, accessToken, refreshToken, profile, done) => {
+  passport.use(strategy.name, new Strategy({ 
+    ...strategy.options, 
+    callbackURL: `${process.env.BASE_URL}/auth/${strategy.options.name}/callback`,
+    passReqToCallback: true 
+  }, (req, accessToken, refreshToken, profile, done) => {
     if (req.user) {
       User.findOne({ ['strategies.' + strategy.name]: profile.id }, (err, existingUser) => {
         if (err) { return done(err); }

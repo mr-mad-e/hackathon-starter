@@ -8,7 +8,6 @@ module.exports = [
         options: {
             clientID: process.env.SNAPCHAT_ID,
             clientSecret: process.env.SNAPCHAT_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/snapchat/callback`,
             profileFields: ['id', 'displayName', 'bitmoji'],
             scope: ['user.display_name', 'user.bitmoji.avatar'],
         },
@@ -25,7 +24,6 @@ module.exports = [
         options: {
             clientID: process.env.FACEBOOK_ID,
             clientSecret: process.env.FACEBOOK_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/facebook/callback`,
             profileFields: ['name', 'email', 'link', 'locale', 'timezone', 'gender'],
         },
         mapUser: (user, profile) => {
@@ -43,7 +41,6 @@ module.exports = [
         options: {
             clientID: process.env.SLACK_ID,
             clientSecret: process.env.SLACK_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/slack/callback`,
         },
         mapUser: (user, profile) => {
             user.email = user.email || profile.user.email;
@@ -58,7 +55,6 @@ module.exports = [
         options: {
             clientID: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/github/callback`,
             scope: ['user:email'],
         },
         mapUser: (user, profile) => {
@@ -76,7 +72,6 @@ module.exports = [
         options: {
             consumerKey: process.env.TWITTER_KEY,
             consumerSecret: process.env.TWITTER_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/twitter/callback`,
         },
         mapUser: (user, profile) => {
             user.email = user.email || `${profile.username}@twitter.com`;
@@ -92,7 +87,6 @@ module.exports = [
         options: {
             clientID: process.env.LINKEDIN_ID,
             clientSecret: process.env.LINKEDIN_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/linkedin/callback`,
             scope: ['r_liteprofile', 'r_emailaddress'],
         },
         mapUser: (user, profile) => {
@@ -108,7 +102,6 @@ module.exports = [
         options: {
             clientID: process.env.INSTAGRAM_ID,
             clientSecret: process.env.INSTAGRAM_SECRET,
-            callbackURL: `${process.env.BASE_URL}/auth/instagram/callback`,
         },
         mapUser: (user, profile) => {
             user.email = user.email || `${profile.username}@instagram.com`;
@@ -124,7 +117,6 @@ module.exports = [
         options: {
             clientID: process.env.MICROSOFT_ID,
             clientSecret: process.env.MICROSOFT_SECRET,
-            callbackURL: '/auth/microsoft/callback',
             scope: ['user.read'],
         },
         mapUser: (user, profile) => {
@@ -140,7 +132,6 @@ module.exports = [
         options: {
             consumerKey: process.env.BITBUCKET_ID,
             consumerSecret: process.env.BITBUCKET_SECRET,
-            callbackURL: '/auth/bitbucket/callback',
         },
         mapUser: (user, profile) => {
             console.log(profile);
@@ -156,7 +147,6 @@ module.exports = [
         options: {
             clientID: process.env.PINTEREST_ID,
             clientSecret: process.env.PINTEREST_SECRET,
-            callbackURL: '/auth/pinterest/callback',
             scope: ['read_public'],
             state: true
         },
@@ -173,7 +163,6 @@ module.exports = [
         options: {
             clientID: process.env.SPOTIFY_ID,
             clientSecret: process.env.SPOTIFY_SECRET,
-            callbackURL: '/auth/spotify/callback',
             scope: ['user-read-email', 'user-read-private']
         },
         mapUser: (user, profile) => {
@@ -189,7 +178,6 @@ module.exports = [
         options: {
             clientID: process.env.AMAZON_ID,
             clientSecret: process.env.AMAZON_SECRET,
-            callbackURL: '/auth/amazon/callback',
             scope: ['profile', 'postal_code']
         },
         mapUser: (user, profile) => {
@@ -204,7 +192,6 @@ module.exports = [
             apiVersion: '2',
             clientID: process.env.DROPBOX_ID,
             clientSecret: process.env.DROPBOX_SECRET,
-            callbackURL: '/auth/dropbox/callback',
         },
         mapUser: (user, profile) => {
             user.email = user.email || profile._json.email;
@@ -218,7 +205,6 @@ module.exports = [
         options: {
             clientID:  process.env.GITLAB_ID,
             clientSecret:  process.env.GITLAB_SECRET,
-            callbackURL: '/auth/gitlab/callback',
             scope: ['read_user']
         },
         mapUser: (user, profile) => {
@@ -234,7 +220,6 @@ module.exports = [
         options: {
             clientID:  process.env.ASANA_ID,
             clientSecret:  process.env.ASANA_SECRET,
-            callbackURL: '/auth/asana/callback',
             scope: ['default', 'email', 'profile']
         },
         mapUser: (user, profile) => {
