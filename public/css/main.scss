@@ -203,3 +203,25 @@ textarea {
     color: #fff;
   }
 }
+
+.btn-asana {
+  background-color: #f64f62;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #f64f62;
+    color: #fff;
+  }
+}
+
+.btn-discord {
+  background-color: #7289da;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #7289da;
+    color: #fff;
+  }
+}

@@ -226,5 +226,20 @@ module.exports = [
             user.email = user.email || profile._json.email;
             user.profile.name = user.profile.name || profile.displayName;
         }
+    }, {
+        name: 'discord',
+        package: 'passport-discord',
+        label: 'Discord',
+        options: {
+            clientID:  process.env.DISCORD_ID,
+            clientSecret:  process.env.DISCORD_SECRET,
+            scope: ['identify', 'email']
+        },
+        mapUser: (user, profile) => {
+            user.email = user.email || profile.email;
+            user.profile.name = user.profile.name || profile.username;
+            user.profile.picture = user.profile.picture || `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png?size=128`;
+            
+        }
     },
 ]
