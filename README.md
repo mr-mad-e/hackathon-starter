@@ -4,9 +4,9 @@ Hackathon Starter
 
 [![Dependency Status](https://david-dm.org/sahat/hackathon-starter/status.svg?style=flat)](https://david-dm.org/sahat/hackathon-starter) [![devDependencies Status](https://david-dm.org/sahat/hackathon-starter/dev-status.svg)](https://david-dm.org/sahat/hackathon-starter?type=dev) [![Build Status](https://travis-ci.org/sahat/hackathon-starter.svg?branch=master)](https://travis-ci.org/sahat/hackathon-starter) [![Join the chat at https://gitter.im/sahat/hackathon-starter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/sahat/hackathon-starter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**Live Demo**: https://hackathon-starter.walcony.com
+**Live Demo**: https://mahammad8564-hackathon-starter.herokuapp.com/
 
-Jump to [What's new?](https://github.com/sahat/hackathon-starter/blob/master/CHANGELOG.md)
+Jump to [What's new?](https://github.com/mahammad8564/hackathon-starter/blob/master/CHANGELOG.md)
 
 A boilerplate for **Node.js** web applications.
 
@@ -77,9 +77,9 @@ Table of Contents
 Features
 --------
 
-- **Local Authentication** using Email and Password
-- **OAuth 1.0a Authentication** via Twitter
-- **OAuth 2.0 Authentication** via Facebook, Google, GitHub, LinkedIn, Instagram
+- **Local Authentication**
+- **OAuth 1.0a Authentication**
+- **OAuth 2.0 Authentication**
 - Flash notifications
 - MVC Project Structure
 - Node.js clusters support
@@ -121,7 +121,7 @@ The easiest way to get started is to clone the repository:
 
 ```bash
 # Get the latest snapshot
-git clone https://github.com/sahat/hackathon-starter.git myproject
+git clone https://github.com/mahammad8564/hackathon-starter.git myproject
 
 # Change directory
 cd myproject
@@ -374,6 +374,7 @@ Project Structure
 | Name                               | Description                                                  |
 | ---------------------------------- | ------------------------------------------------------------ |
 | **config**/passport.js             | Passport Local and OAuth strategies, plus login middleware.  |
+| **config**/strategies.js           | Passport OAuth strategies.                                   |
 | **controllers**/api.js             | Controller for /api route and all api examples.              |
 | **controllers**/contact.js         | Controller for contact form.                                 |
 | **controllers**/home.js            | Controller for home page (index).                            |
@@ -451,16 +452,26 @@ List of Packages
 | nodemailer                      | Node.js library for sending emails.                                     |
 | node-quickbooks                 | Quickbooks API library.                                                 |
 | passport                        | Simple and elegant authentication library for node.js.                  |
+| passport-amazon                 | Sign-in with amazon plugin.                                             |
+| passport-asana                  | Sign-in with asana plugin.                                              |
+| passport-bitbucket              | Sign-in with bitbucket plugin.                                          |
+| passport-discord                | Sign-in with discord plugin.                                            |
+| passport-dropbox-oauth2         | Sign-in with dropbox plugin.                                            |
 | passport-facebook               | Sign-in with Facebook plugin.                                           |
 | passport-github                 | Sign-in with GitHub plugin.                                             |
+| passport-gitlab2                | Sign-in with gitlab plugin.                                             |
 | passport-google-oauth           | Sign-in with Google plugin.                                             |
 | passport-instagram              | Sign-in with Instagram plugin.                                          |
 | passport-linkedin-oauth2        | Sign-in with LinkedIn plugin.                                           |
 | passport-local                  | Sign-in with Username and Password plugin.                              |
+| passport-microsoft              | Sign-in with microsoft plugin.                                          |
 | passport-openid                 | Sign-in with OpenId plugin.                                             |
+| passport-pinterest              | Sign-in with pinterest plugin.                                          |
 | passport-oauth                  | Allows you to set up your own OAuth 1.0a and OAuth 2.0 strategies.      |
 | passport-oauth2-refresh         | A library to refresh OAuth 2.0 access tokens using refresh tokens.      |
 | passport-snapchat               | Sign-in with Snapchat plugin.                                           |
+| passport-spotify                | Sign-in with spotify plugin.                                            |
+| passport-snapchat               | Sign-in with snapchat plugin.                                           |
 | passport-twitter                | Sign-in with Twitter plugin.                                            |
 | paypal-rest-sdk                 | PayPal APIs library.                                                    |
 | pug                             | Template engine for Express.                                            |
@@ -540,7 +551,7 @@ FAQ
 
 ### Why do I get `403 Error: Forbidden` when submitting a form?
 You need to add the following hidden input element to your form. This has been
-added in the [pull request #40](https://github.com/sahat/hackathon-starter/pull/40)
+added in the [pull request #40](https://github.com/mahammad8564/hackathon-starter/pull/40)
 as part of the CSRF protection.
 
 ```
@@ -1505,12 +1516,12 @@ Be sure to check out the full list of Watson services to forwarder enhance your 
 
 Production
 ---------
- If you are starting with this boilerplate to build an application for prod deployment, or if after your hackathon you would like to get your project hardened for production use, see [prod-checklist.md](https://github.com/sahat/hackathon-starter/blob/master/prod-checklist.md).
+ If you are starting with this boilerplate to build an application for prod deployment, or if after your hackathon you would like to get your project hardened for production use, see [prod-checklist.md](https://github.com/mahammad8564/hackathon-starter/blob/master/prod-checklist.md).
 
 Changelog
 ---------
 
-You can find the changelog for the project in: [CHANGELOG.md](https://github.com/sahat/hackathon-starter/blob/master/CHANGELOG.md)
+You can find the changelog for the project in: [CHANGELOG.md](https://github.com/mahammad8564/hackathon-starter/blob/master/CHANGELOG.md)
 
 
 Contributing

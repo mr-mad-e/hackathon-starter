@@ -30,7 +30,8 @@ footer {
   height: 45px;
   line-height: 45px;
 
-  p, ul {
+  p,
+  ul {
     margin-bottom: 0;
   }
 }
@@ -58,7 +59,7 @@ textarea {
   display: block;
 }
 
-.navbar-brand{
+.navbar-brand {
   font-size: 18px;
   float: left;
 }
@@ -153,7 +154,8 @@ textarea {
   background-color: #fffc00;
   color: #000 !important;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: #f1ef00;
   }
 }
@@ -162,8 +164,64 @@ textarea {
   background-color: #007a5a;
   color: #fff;
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     background-color: #037053;
+    color: #fff;
+  }
+}
+
+.btn-spotify {
+  background-color: #1ed760;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #1ed760;
+    color: #fff;
+  }
+}
+
+.btn-gitlab {
+  background-color: #de7e00;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #de7e00;
+    color: #fff;
+  }
+}
+
+.btn-youtube {
+  background-color: #e52d27;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #e52d27;
+    color: #fff;
+  }
+}
+
+.btn-asana {
+  background-color: #f64f62;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #f64f62;
+    color: #fff;
+  }
+}
+
+.btn-discord {
+  background-color: #7289da;
+  color: #fff;
+
+  &:hover,
+  &:active {
+    background-color: #7289da;
     color: #fff;
   }
 }

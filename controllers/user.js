@@ -6,6 +6,7 @@ const _ = require('lodash');
 const validator = require('validator');
 const mailChecker = require('mailchecker');
 const User = require('../models/User');
+const strategies = require('../config/strategies');
 
 const randomBytesAsync = promisify(crypto.randomBytes);
 
@@ -18,7 +19,8 @@ exports.getLogin = (req, res) => {
     return res.redirect('/');
   }
   res.render('account/login', {
-    title: 'Login'
+    title: 'Login',
+    strategies: strategies
   });
 };
 
@@ -122,7 +124,8 @@ exports.postSignup = (req, res, next) => {
  */
 exports.getAccount = (req, res) => {
   res.render('account/profile', {
-    title: 'Account Management'
+    title: 'Account Management',
+    strategies: strategies
   });
 };
 
@@ -208,7 +211,8 @@ exports.getOauthUnlink = (req, res, next) => {
   const { provider } = req.params;
   User.findById(req.user.id, (err, user) => {
     if (err) { return next(err); }
-    user[provider.toLowerCase()] = undefined;
+    user.strategies[provider.toLowerCase()] = undefined;
+    user.markModified('strategies');
     const tokensWithoutProviderToUnlink = user.tokens.filter((token) =>
       token.kind !== provider.toLowerCase());
     // Some auth providers do not provide an email address in the user profile.
