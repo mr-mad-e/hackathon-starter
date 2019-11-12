@@ -4,12 +4,11 @@
   "description": "A boilerplate for Node.js web applications",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sahat/hackathon-starter.git"
+    "url": "https://github.com/mahammad8564/hackathon-starter.git"
   },
   "license": "MIT",
-  "author": "Sahat Yalkabov",
+  "author": "Mahammad",
   "contributors": [
-    "Yashar Fakhari (https://github.com/YasharF)"
   ],
   "scripts": {
     "postinstall": "npm rebuild node-sass",
