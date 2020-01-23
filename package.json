@@ -8,8 +8,7 @@
   },
   "license": "MIT",
   "author": "Mahammad",
-  "contributors": [
-  ],
+  "contributors": [],
   "scripts": {
     "postinstall": "npm rebuild node-sass",
     "start": "node app.js",
@@ -45,7 +44,7 @@
     "lob": "^6.0.6",
     "lodash": "^4.17.15",
     "lusca": "^1.6.1",
-    "mailchecker": "^3.3.1",
+    "mailchecker": "^3.3.4",
     "moment": "^2.24.0",
     "mongoose": "^5.7.9",
     "morgan": "^1.9.1",
