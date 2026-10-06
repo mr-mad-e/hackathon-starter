@@ -8,8 +8,7 @@
   },
   "license": "MIT",
   "author": "Mahammad",
-  "contributors": [
-  ],
+  "contributors": [],
   "scripts": {
     "postinstall": "npm rebuild node-sass",
     "start": "node app.js",
@@ -28,7 +27,7 @@
     "chart.js": "^2.9.2",
     "cheerio": "^1.0.0-rc.3",
     "clockwork": "^0.1.4",
-    "compression": "^1.7.4",
+    "compression": "^1.8.2",
     "connect-mongo": "^3.1.2",
     "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
